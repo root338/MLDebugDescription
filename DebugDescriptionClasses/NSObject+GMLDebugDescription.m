@@ -43,27 +43,6 @@ typedef NS_ENUM(NSInteger, __KGMLTestClassType) {
     }
 }
 
-- (NSString *)__gml_inputArray {
-    NSMutableArray *items = NSMutableArray.array;
-    [(NSArray *)self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [items addObject:obj];
-    }];
-    return ___KGMLDebugInputCollection(self, items);
-}
-- (NSString *)__gml_inputDictionary {
-    NSMutableArray *items = NSMutableArray.array;
-    [(NSDictionary *)self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [items addObject:[NSString stringWithFormat:@"%@ = %@", key, obj]];
-    }];
-    return ___KGMLDebugInputCollection(self, items);
-}
-- (NSString *)__gml_inputSet {
-    NSMutableArray *items = NSMutableArray.array;
-    [(NSSet *)self enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [items addObject:obj];
-    }];
-    return ___KGMLDebugInputCollection(self, items);
-}
 - (NSString *)__gml_inputCustom {
     NSMutableArray *items = NSMutableArray.array;
     Class mClass = self.class;
@@ -73,7 +52,7 @@ typedef NS_ENUM(NSInteger, __KGMLTestClassType) {
             if ([value isKindOfClass:NSNull.class]) {
                 value = @"<NSNull>";
             }
-            [items addObject:[NSString stringWithFormat:@"%@ : %@", name, value]];
+            [items addObject:[NSString stringWithFormat:@"%@ = %@", name, value]];
         }];
         mClass = class_getSuperclass(mClass);
     }
