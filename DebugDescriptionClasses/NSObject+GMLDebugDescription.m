@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, __KGMLTestClassType) {
 }
 
 - (NSString *)__gml_inputCustom {
-    NSMutableArray *items = NSMutableArray.array;
+    NSMutableDictionary *items = NSMutableDictionary.dictionary;
     Class mClass = self.class;
     while ([mClass __gmlClassType] == __KGMLTestClassTypeCustom) {
         [self enumerateObjectsUsingBlock:^(NSString *name) {
@@ -52,11 +52,11 @@ typedef NS_ENUM(NSInteger, __KGMLTestClassType) {
             if ([value isKindOfClass:NSNull.class]) {
                 value = @"<NSNull>";
             }
-            [items addObject:[NSString stringWithFormat:@"%@ = %@", name, value]];
+            [items setObject:value?:@"null" forKey:name];
         }];
         mClass = class_getSuperclass(mClass);
     }
-    return ___KGMLDebugInputCustom(self, items);
+    return [NSString stringWithFormat:@"<%@: %p>  %@ ", self.class, self, items];
 }
 
 - (void)enumerateObjectsUsingBlock:(void (^)(NSString *name))block {

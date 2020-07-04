@@ -18,6 +18,8 @@
 		6D62948224AF156300307132 /* MLDebugDescriptionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D62948124AF156300307132 /* MLDebugDescriptionUITests.m */; };
 		6D62949324AF38ED00307132 /* NSObject+GMLDebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D62949124AF15C600307132 /* NSObject+GMLDebugDescription.m */; };
 		6D62949624AF42BB00307132 /* UI+GMLDebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D62949524AF42BB00307132 /* UI+GMLDebugDescription.m */; };
+		6DD53B1624B0C81800068A24 /* NSObject+GMLDebugAddInjected.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD53B1524B0C81800068A24 /* NSObject+GMLDebugAddInjected.m */; };
+		6DD53B1924B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD53B1824B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		6D62949124AF15C600307132 /* NSObject+GMLDebugDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GMLDebugDescription.m"; sourceTree = "<group>"; };
 		6D62949424AF42BB00307132 /* UI+GMLDebugDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI+GMLDebugDescription.h"; sourceTree = "<group>"; };
 		6D62949524AF42BB00307132 /* UI+GMLDebugDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UI+GMLDebugDescription.m"; sourceTree = "<group>"; };
+		6DD53B1424B0C81800068A24 /* NSObject+GMLDebugAddInjected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GMLDebugAddInjected.h"; sourceTree = "<group>"; };
+		6DD53B1524B0C81800068A24 /* NSObject+GMLDebugAddInjected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GMLDebugAddInjected.m"; sourceTree = "<group>"; };
+		6DD53B1724B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+GMLDebugAddInjected.h"; sourceTree = "<group>"; };
+		6DD53B1824B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+GMLDebugAddInjected.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +155,22 @@
 			children = (
 				6D62949024AF15C600307132 /* NSObject+GMLDebugDescription.h */,
 				6D62949124AF15C600307132 /* NSObject+GMLDebugDescription.m */,
+				6DD53B1324B0C7E900068A24 /* Injected */,
 				6D62949424AF42BB00307132 /* UI+GMLDebugDescription.h */,
 				6D62949524AF42BB00307132 /* UI+GMLDebugDescription.m */,
 			);
 			path = DebugDescriptionClasses;
+			sourceTree = "<group>";
+		};
+		6DD53B1324B0C7E900068A24 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				6DD53B1424B0C81800068A24 /* NSObject+GMLDebugAddInjected.h */,
+				6DD53B1524B0C81800068A24 /* NSObject+GMLDebugAddInjected.m */,
+				6DD53B1724B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.h */,
+				6DD53B1824B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.m */,
+			);
+			path = Injected;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D62946224AF155F00307132 /* ViewController.m in Sources */,
+				6DD53B1924B0C89F00068A24 /* UIApplication+GMLDebugAddInjected.m in Sources */,
 				6D62945C24AF155F00307132 /* AppDelegate.m in Sources */,
 				6D62946D24AF156300307132 /* main.m in Sources */,
 				6D62949324AF38ED00307132 /* NSObject+GMLDebugDescription.m in Sources */,
 				6D62949624AF42BB00307132 /* UI+GMLDebugDescription.m in Sources */,
+				6DD53B1624B0C81800068A24 /* NSObject+GMLDebugAddInjected.m in Sources */,
 				6D62945F24AF155F00307132 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

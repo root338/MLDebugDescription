@@ -46,6 +46,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = UIColor.redColor;
+    
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    view1.backgroundColor = UIColor.blueColor;
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    view2.backgroundColor = UIColor.orangeColor;
+    
+    [self.view addSubview:view2];
+    [self.view addSubview:view1];
+    [self.view addSubview:view];
     _VCInfo *info = _VCInfo.new;
 //    info.subInfo = info;
     _User *user = _User.new;
@@ -64,6 +76,7 @@
     };
     NSLog(@"%@", info);
 }
+
 
 
 @end
